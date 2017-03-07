@@ -6,12 +6,16 @@ import VisibleTodoList from '../containers/VisibleTodoList';
 // class App extends React.Component {
 //
 // }
-const App = () => (
-    <div>
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
-    </div>
-);
+const App = ({params}) => {
+    return (
+        <div>
+            <AddTodo />
+            <VisibleTodoList
+                filter={params.filter || 'all'}
+            />
+            <Footer />
+        </div>
+    );
+};
 
 export default App;

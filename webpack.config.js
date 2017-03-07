@@ -23,6 +23,9 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
+    devServer: {
+        historyApiFallback: true,
+    },
     module: {
         loaders: [
             {

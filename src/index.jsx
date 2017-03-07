@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
-import {Router, Route, hashHistory} from "react-router"
+import {Router, Route, browserHistory} from "react-router"
 import {createStore} from "redux";
 import todoApp from "./reducers/reducers";
 import App from "./components/App";
@@ -11,7 +11,7 @@ let store = createStore(todoApp,
 
 const Root = () => (
     <Provider store={store}>
-        <Router history={hashHistory}>
+        <Router history={browserHistory}>
             <Route path='/(:filter)' component={App} />
         </Router>
     </Provider>
