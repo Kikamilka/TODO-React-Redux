@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap'
 
 const FilterLink = ({filter, children}) => (
     <Link

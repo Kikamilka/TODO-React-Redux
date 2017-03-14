@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
+import {FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
 
 // class App extends React.Component {
 //
@@ -9,10 +10,18 @@ import VisibleTodoList from '../containers/VisibleTodoList';
 const App = ({params}) => {
     return (
         <div>
-            <AddTodo />
-            <VisibleTodoList
-                filter={params.filter || 'all'}
-            />
+            <div className="container">
+                <FormGroup bsSize="large">
+                    <ControlLabel bsClass="control-label_title">
+                        TODO List!
+                    </ControlLabel>
+                    <AddTodo />
+
+                    <VisibleTodoList
+                        filter={params.filter || 'all'}
+                    />
+                </FormGroup>
+            </div>
             <Footer />
         </div>
     );
