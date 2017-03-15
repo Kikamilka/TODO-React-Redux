@@ -1,16 +1,33 @@
 import React, {PropTypes} from 'react'
 import Todo from './Todo'
+import {Button, Grid, Col, ListGroup} from 'react-bootstrap';
 
-const TodoList = ({todos, onTodoClick}) => (
-    <ul>
-        {todos.map(todo =>
-            <Todo
-                key={todo.id}
-                {...todo}
-                onClick={() => onTodoClick(todo.id)}
-            />
+const TodoList = ({todos, onTodoClick, onDelete}) => (
+    <ListGroup>
+        {todos.map(todo => {
+                return (
+                    <div key={todo.id}>
+                        <br />
+                        <Grid>
+                            <Col xs={1} md={1}>
+                                <Button
+                                    bsStyle="primary"
+                                    onClick={() => onDelete(todo.id)}>
+                                    Delete
+                                </Button>
+                            </Col>
+                            <Col xs={6} md={6}>
+                                <Todo
+                                    {...todo}
+                                    onClick={() => onTodoClick(todo.id)}
+                                />
+                            </Col>
+                        </Grid>
+                    </div>
+                );
+            }
         )}
-    </ul>
+    </ListGroup>
 );
 
 TodoList.propTypes = {
