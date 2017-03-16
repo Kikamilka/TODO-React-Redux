@@ -6,8 +6,10 @@ import {createStore} from "redux";
 import todoApp from "./reducers/reducers";
 import App from "./components/App";
 
-let store = createStore(todoApp,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+let store = createStore(
+    todoApp,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const Root = () => (
     <Provider store={store}>

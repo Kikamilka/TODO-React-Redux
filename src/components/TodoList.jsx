@@ -11,7 +11,7 @@ const TodoList = ({todos, onTodoClick, onDelete}) => (
                         <Grid>
                             <Col xs={1} md={1}>
                                 <Button
-                                    bsStyle="primary"
+                                    bsStyle="danger"
                                     onClick={() => onDelete(todo.id)}>
                                     Delete
                                 </Button>
